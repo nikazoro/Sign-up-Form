@@ -1,74 +1,238 @@
-* {
-    margin: 0;
-    padding: 0;
+@font-face {
+  font-family: Norse-Bold;
+  src: url(Norse-Bold.otf);
 }
 
- html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+@font-face {
+  font-family: Norse-Regular;
+  src: url(Norse-Regular.otf);
 }
 
-
-html body{
-  font-size: 1.2rem;
-  padding: 0;
+body {
   margin: 0;
+  padding: 0;
 }
 
 .main {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
+  display: flex;
+  justify-content: left;
 }
 
-.picture {
-    flex-grow: 1;
-    position: relative;
-    width: 60vw;
-    min-width: 345px;
-    height: 100vh;
-    background: url(img/bg.jpg);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+.left {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
-.picture div {
+#picture {
+  /* display: flex; */
+  /* flex-direction: column; */
+  justify-content: flex-start;
+  background-image: url(leaf.avif);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 30vw;
+  height: 100vh;
+}
+
+/* Image Center Logo & Text */
+.img_text {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* position: relative; */
+  /* margin-top: 50%; */
+  margin-top: 45vh;
+  gap: 1vw;
+  align-items: center;
+}
+
+#logo {
+  width: 4rem;
+}
+
+.img_text > h1 {
+  font-family: Norse-Bold;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+#credit {
+  font-family: Norse-Regular;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  align-self: flex-end;
+}
+
+/* form-section */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-flow: column nowrap;
+  background-color: whitesmoke;
+  /* width: 50vw; */
+}
+
+.head {
+  margin-bottom: 30px;
+}
+
+.head > p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* font-size: 1.5rem; */
+  color: black;
+  text-align: left;
+  margin-right: 30%;
+  margin-left: 40px;
+}
+
+.form-content > h3 {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.form-content {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1rem;
+  background-color: white;
+  /* box-shadow: 0 10px 20px -2px rgb(22, 22, 22); */
+  display: flex;
+  flex-flow: row wrap;
+  gap: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.input {
+  display: flex;
+  flex-flow: column wrap;
+  width: 40%;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  opacity: 90%;
+}
+
+input {
+  background-color: whitesmoke;
+  border: 1px solid rgb(77, 77, 77);
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid rgb(77, 77, 77);
+}
+
+button {
+  background-color: green;
+  border-radius: 10px;
+  font-family: Norse-Regular;
+  color: white;
+  font-size: 20px;
+  margin-left: 40px;
+  padding: 10px 30px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: gray;
+  color: white;
+  transition: 0.5s;
+}
+
+h3 {
+  margin-left: 40px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .left {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.527);
-    line-height: 2rem;
-    padding: 0 2vw;
+  }
+
+  .right {
+    height: 100vh;
+  }
+
+  #picture {
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .img_text {
+    margin-top: 20vh;
+    width: 100%;
+    height: 30vh;
+  }
+
+  .img_text > h1 {
+    font-size: 2rem;
+  }
+
+  #credit {
+    font-size: 0.5rem;
+  }
+
+  .head {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .head > p {
+    text-align: center;
+  }
+
+  .form-content {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+
+  .input {
+    width: 100%;
+    text-align: center;
+  }
+
+  button {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .btn {
     display: flex;
     justify-content: center;
-    align-items: center;
-}
+  }
 
-.picture img {
-    width: 5rem;
-    padding: 10px;
-}
+  .head > p {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-/*@media all and (max-width:480px) {*/
-
-/*}*/
-
-/*@media only screen and (max-width: 540px) {*/
-
-/*}*/
-
-@media screen and (max-width: 540px) {
-
-    .main {
-        flex-direction: column;
-    }
-
-    .picture {
-        width: 100vw;
-        height: 20rem;
-    }
+  h3 {
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+  }
 }
